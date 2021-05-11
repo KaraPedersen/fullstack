@@ -19,3 +19,5 @@ class DogItem extends Component {
   }
   
 }
+
+export default DogItem;

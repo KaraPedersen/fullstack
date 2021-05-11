@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
 import DogsPage from '../dogs/DogsPage';
-import 
+import DogDetailPage from '../dog/DogDetailPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -28,15 +28,15 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/resources" exact={true}
+              <Route path="/dogs" exact={true}
                 render={routerProps => (
-                  <div>Implement a page of resources</div>
+                  <DogsPage {...routerProps}/>
                 )}
               />
 
-              <Route path="/resources/:id"
+              <Route path="/dogs/:id"
                 render={routerProps => (
-                  <div>Implement a page for id {routerProps.match.params.id}</div>
+                  <DogDetailPage {...routerProps}/> 
                 )}
               />
 

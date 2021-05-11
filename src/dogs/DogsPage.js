@@ -1,6 +1,5 @@
 import { Component } from 'react';
-import { get } from 'superagent';
-import DogList from '../DogList';
+import DogList from './DogList';
 import { getDogs } from '../utils/dogs-api';
 import './DogsPage.css';
 
@@ -21,15 +20,14 @@ export default class DogsPage extends Component {
   render() {
     const { dogs } = this.state;
 
-    return(
+    return (
       <div className="DogsPage">
-      <h2> List o Dogs</h2>
+        <h2> List o Dogs</h2>
 
-      <DogList dogs={dogs}/>
+        <DogList dogs={dogs}/>
 
       </div>
-      );
-    }
-
+    );
   }
+
 }

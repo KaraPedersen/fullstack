@@ -11,10 +11,11 @@ class DogList extends Component {
       <ul className="DogList">
         {dogs.map(dog => (
           <DogItem key={dog.id} dog={dog}/>
-
         ))}
       </ul>
     );
   }
   
 }
+
+export default DogList;

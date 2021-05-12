@@ -6,7 +6,7 @@ class DogItem extends Component {
 
   render() {
     const dog = this.props.dog;
-    console.log(dog);
+    // console.log(dog);
     return (
       <li className="DogItem">
         <Link to={`/dogs/${dog.id}`}>

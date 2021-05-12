@@ -48,6 +48,12 @@ class App extends Component {
                 )}
               />
 
+              <Route path="/dogs/:id/edit" exact={true}
+                render={routerProps => (
+                  <DogEditPage {...routerProps}/>
+                )}
+              />
+
               <Redirect to="/" />
 
             </Switch>

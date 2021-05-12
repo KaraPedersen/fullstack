@@ -30,7 +30,7 @@ export default class DogForm extends Component {
   }
 
   handleChangeType = ({ target }) => {
-    this.setState({ typr: target.value });
+    this.setState({ type: target.value });
   }
 
   handleChangeTvShows = ({ target }) => {
@@ -72,9 +72,14 @@ export default class DogForm extends Component {
             >
               <option value="" disabled>Type (
                 Beagle, Schnauzer, etc.)</option>
+              <option>Great Dane</option>
+              <option>Bloodhound</option>
+              <option>German Shepherd</option>
               <option>Beagle</option>
-              <option>Schnauzer</option>
-              <option>Lab</option>
+              <option>Dachshund and Terrier Mix</option>
+              <option>Schnauzer Mix</option>
+              <option>Coonhound</option>
+              <option>Great Dane</option>
             </select>
           </label>
         </p>
@@ -85,14 +90,15 @@ export default class DogForm extends Component {
             <select name="Tv Shows" required
               value={tvShows} onChange={this.handleChangeLives}
             >
-              <option>9</option>
-              <option>8</option>
-              <option>7</option>
-              <option>6</option>
-              <option>5</option>
-              <option>4</option>
-              <option>3</option>
-              <option>2</option>
+              <option>Scooby Doo, Where Are you?</option>
+              <option>Mickey Mouse Clubhouse</option>
+              <option>Bolt</option>
+              <option>Charlie Brown and Snoopy</option>
+              <option>The Garfield Show</option>
+              <option>The Lady and the Tramp
+              </option>
+              <option>Goof Troop</option>
+              <option>Scooby Doo</option>
               <option>1</option>
               <option>0</option>
             </select>

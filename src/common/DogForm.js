@@ -1,13 +1,13 @@
-import { findAllByTestId } from '@testing-library/dom';
+// import { findAllByTestId } from '@testing-library/dom';
 import { Component } from 'react';
-import testUtils from 'react-dom/test-utils';
+// import testUtils from 'react-dom/test-utils';
 import './DogForm.css';
 
 export default class DogForm extends Component {
   state = {
     name: '',
     type: '',
-    // tvShows:
+    tvShows: '',
     url: '',
     year: '',
     isSidekick: false
@@ -33,58 +33,109 @@ export default class DogForm extends Component {
     this.setState({ typr: target.value });
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  render() {
-    return (
-      <div className="DogForm">
-        
-      </div>
-    );
+  handleChangeTvShows = ({ target }) => {
+    this.setState({ tvShows: target.value });
   }
 
+  handleChangeUrl = ({ target }) => {
+    this.setState({ url: target.value });
+  }
+
+  handleChangeYear = ({ target }) => {
+    this.setState({ year: target.value });
+  }
+
+  handleChangeIsSidekick = ({ target }) => {
+    this.setState({ isSidekick: target.checked });
+  }  
+  
+  render() {
+    const { name, type, tvShows, url, year, isSidekick } = this.state;
+    const { dog } = this.props;
+
+    return (
+      <form className="DogForm" onSubmit={this.handleSubmit}>
+        <p>
+          <label>
+            <span>Dog Name</span>
+            <input name="name" required placeholder="Name of the famous dog..."
+              value={name} onChange={this.handleChangeName}
+            />
+          </label>
+        </p>
+
+        <p>
+          <label>
+            <span>Dog Type</span>
+            <select name="type" required placeholder="Type (schnauzer, etc.)"
+              value={type} onChange={this.handleChangeType}
+            >
+              <option value="" disabled>Type (
+                Beagle, Schnauzer, etc.)</option>
+              <option>Beagle</option>
+              <option>Schnauzer</option>
+              <option>Lab</option>
+            </select>
+          </label>
+        </p>
+
+        <p>
+          <label>
+            <span>Tv Shows</span>
+            <select name="Tv Shows" required
+              value={tvShows} onChange={this.handleChangeLives}
+            >
+              <option>9</option>
+              <option>8</option>
+              <option>7</option>
+              <option>6</option>
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+              <option>2</option>
+              <option>1</option>
+              <option>0</option>
+            </select>
+          </label>
+        </p>
+      
+        <p>
+          <label>
+            <span>Dog Image Url</span>
+            <input name="url" required placeholder="Url to image of dog"
+              value={url} onChange={this.handleChangeUrl}
+            />
+          </label>
+        </p>
+      
+        <p>
+          <label>
+            <span>Year Introduced</span>
+            <input name="year" required pattern="\d{4}"
+              title="Should be a four digit year like 2021"
+              placeholder="Enter a four-digit year"
+              value={year} onChange={this.handleChangeYear}
+            />
+          </label>
+        </p>
+      
+        <p>
+          <label>
+            <span>Is a Sidekick?</span>
+            <span className="vertically-centered">
+              <input name="isSidekick"
+                type="checkbox"
+                value={isSidekick} onChange={this.handleChangeIsSidekick}
+              /> Yes
+            </span>
+          </label>
+        </p>
+
+        <p>
+          <button>{ dog ? 'Update' : 'Add'} Dog</button>
+        </p>
+
+      </form>
+    );
+  }
 }

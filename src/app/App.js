@@ -4,6 +4,8 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import DogsPage from '../dogs/DogsPage';
 import DogDetailPage from '../dog/DogDetailPage';
+import DogAddPage from '../dog-add/DogAddPage';
+import DogEditPage from '../dog-edit/DogEditPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -34,9 +36,21 @@ class App extends Component {
                 )}
               />
 
+              <Route path="/dogs/add" exact={true}
+                render={routerProps => (
+                  <DogAddPage {...routerProps}/>
+                )}
+              />
+
               <Route path="/dogs/:id"
                 render={routerProps => (
                   <DogDetailPage {...routerProps}/> 
+                )}
+              />
+
+              <Route path="/dogs/:id/edit" exact={true}
+                render={routerProps => (
+                  <DogEditPage {...routerProps}/>
                 )}
               />
 

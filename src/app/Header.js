@@ -8,10 +8,16 @@ class Header extends Component {
     return (
       <header className="Header">
 
-        <h1>React App</h1>
+        <img className="logo"
+          alt="famous dogs logo"
+          src="famous-dogs.png"
+        />
+
+        <h1>Famous Dogs</h1>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/dogs">Dogs</NavLink>
+          <NavLink to="/" exact={true}>Home</NavLink>
+          <NavLink to="/dogs" exact={true}>Dogs</NavLink>
+          <NavLink to="/dogs/add">Add Dog</NavLink>
         </nav>
         
       </header>

@@ -1,37 +1,69 @@
 import { Component } from 'react';
-import { getDog } from '../utils/dogs-api';
+import Loader from '../common/Loader';
+import { Link } from 'react-router-dom';
+import { getDog, deleteDog } from '../utils/dogs-api';
 import './DogDetailPage.css';
 
 export default class DogDetailPage extends Component {
   state = {
-    dog: null
+    dog: null,
+    loading: true
   }
 
   async componentDidMount() {
     const { match } = this.props;
-    const dog = await getDog(match.params.id);
-    if (dog) {
+    try {
+      const dog = await getDog(match.params.id);
       this.setState({ dog: dog });
     }
-    else {
-      console.log('No dog received. Check id and network tab');
+    finally {
+      this.setState({ loading: false });
     }
   }
-  
-  render() {
+  handelDelete = async () => {
     const { dog } = this.state;
+    const { history } = this.props;
+
+    const confirmation = `Are you sure you want to delete ${dog.name}?`;
+
+    if (!window.confirm(confirmation)) { return; }
+
+    try {
+      this.setState({ loading : true });
+      await deleteDog(dog.id);
+      history.push('dogs');
+    }
+    catch (err) {
+      console.log(err.message);
+      this.setState({ loading : false });
+    }
+  }
+
+  render() {
+    const { dog, loading } = this.state;
 
     if (!dog) return null;
 
     return (
+      <div className="DogDetailPage">
+        <Loader loading={loading}/>
 
-      <div className="DogDetail">
-        <h2>Dog Detail Page</h2>
+        <h2>{dog.name}</h2>
 
-        <p>Dog name: {dog.name}</p>        
-        <p>Dog Tv Show: {dog.tvShow}</p>        
-        <p>Dog year: {dog.year}</p>        
-        <p>Owner: {dog.username}</p>        
+        <img src={dog.url} alt={dog.name}/>
+
+        <p>Introduced in {dog.year}</p>
+        <p>Has {dog.tvShows} {dog.tvShows === 1 ? 'show' : 'tvShows' } remaining</p>
+        {dog.isSidekick && 'This dog is a sidekick'}
+        <p>Owned by user "{dog.userName}"</p>
+
+        <Link to={`/dogs/${dog.id}/edit`}>
+          Edit this Dog
+        </Link>
+
+        <button className="delete" onClick={this.handleDelete}>
+          Delete this Dog
+        </button>
       </div>
     );
   }

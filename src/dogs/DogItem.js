@@ -6,13 +6,13 @@ class DogItem extends Component {
 
   render() {
     const dog = this.props.dog;
-
+    console.log(dog);
     return (
       <li className="DogItem">
         <Link to={`/dogs/${dog.id}`}>
           <h2>{dog.name}</h2>
           <img src={dog.url} alt={dog.name}/>
-          <p> TvShows: {dog.tvShow}</p>
+          <p> Tv Shows: {dog.tvShow}</p>
         </Link>
       </li>
     );

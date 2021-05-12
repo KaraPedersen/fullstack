@@ -16,6 +16,9 @@ export default class DogDetailPage extends Component {
       const dog = await getDog(match.params.id);
       this.setState({ dog: dog });
     }
+    catch (err) {
+      console.log(err.message);
+    }
     finally {
       this.setState({ loading: false });
     }
@@ -31,7 +34,7 @@ export default class DogDetailPage extends Component {
     try {
       this.setState({ loading : true });
       await deleteDog(dog.id);
-      history.push('dogs');
+      history.push('/dogs');
     }
     catch (err) {
       console.log(err.message);

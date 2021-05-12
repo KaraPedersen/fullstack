@@ -1,6 +1,4 @@
-// import { findAllByTestId } from '@testing-library/dom';
 import { Component } from 'react';
-// import testUtils from 'react-dom/test-utils';
 import './DogForm.css';
 
 export default class DogForm extends Component {

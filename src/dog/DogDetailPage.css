@@ -1,3 +1,25 @@
-.DogDetail {
-  
+.DogDetailPage {
+  padding: 20px;
+}
+
+.DogDetailPage img {
+  height: 200px;
+}
+
+.DogDetailPage p {
+  margin: 15px 0;
+}
+
+.DogDetailPage a {
+  font-size: .9rem;
+  margin-right: 10px;
+}
+
+.DogDetailPage button.delete {
+  background: 0;
+  border: 0;
+  text-decoration: underline;
+  color: blue;
+  font-size: .9rem;
+  cursor: pointer;
 }

@@ -1,27 +1,27 @@
-.CatForm  {
+.DogForm  {
   background: #E89062;;
   padding: 20px 50px;
   max-width: 400px;
 }
 
-.CatForm p {
+.DogForm p {
   margin: 20px 0;
 }
 
-.CatForm label span {
+.DogForm label span {
   display: block;
   margin-bottom: 7px;
   font-size: .85rem;
   text-transform: uppercase;
 }
 
-.CatForm input, .CatForm select, .CatForm button {
+.DogForm input, .DogForm select, .DogForm button {
   width: 100%;
   height: 30px;
   box-sizing: border-box;
 }
 
-.CatForm input[type=checkbox] {
+.DogForm input[type=checkbox] {
   margin-left: 0;
   margin-right: 5px;
   width: 15px;
@@ -29,21 +29,21 @@
   box-sizing: border-box;
 }
 
-.CatForm .vertically-centered {
+.DogForm .vertically-centered {
   display: flex;
   align-items: center;
   text-transform: initial;
 }
 
-.CatForm select:invalid {
+.DogForm select:invalid {
   color: gray;
 }
 
-.CatForm option:disabled {
+.DogForm option:disabled {
   color: gray;
 }
 
-.CatForm button {
+.DogForm button {
   background: #65A7AB;
   border: 1px solid #1F4E5C;
   color: white;

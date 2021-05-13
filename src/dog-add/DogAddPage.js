@@ -10,7 +10,7 @@ export default class DogAddPage extends Component {
 
     handleAdd = async dogToAdd => {
       const { history } = this.props;
-
+      console.log(dogToAdd);
       try {
         this.setState({ loading: true });
 

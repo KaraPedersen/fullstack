@@ -1,2 +1,2 @@
-/api/*  https://fast-river-80835.herokuapp.com/api/:splat
+/api/*  https://fast-river-80835.herokuapp.com/api/:splat 200!
 /*    /index.html   200

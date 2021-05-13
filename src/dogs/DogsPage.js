@@ -22,14 +22,7 @@ export default class DogsPage extends Component {
       this.setState({ loading: false });
     }
   }
-  //   const dogs = await getDogs();
-  //   if (dogs) {
-  //     this.setState({ dogs: dogs });
-  //   }
-  //   else {
-  //     console.log('No dogs received! Check network tab');
-  //   }
-  // }
+
   render() {
     const { dogs, loading } = this.state;
 
@@ -44,4 +37,5 @@ export default class DogsPage extends Component {
       </div>
     );
   }
+
 }

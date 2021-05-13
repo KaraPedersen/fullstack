@@ -10,7 +10,7 @@ class Header extends Component {
 
         <img className="logo"
           alt="famous dogs logo"
-          src="famous-dogs.png"
+          src="/dogs/astro.jpeg"
         />
 
         <h1>Famous Dogs</h1>

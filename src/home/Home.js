@@ -8,11 +8,16 @@ export default class Home extends Component {
     return (
       <div className="Home">
         <header>
-          <h2>Home Page</h2>
+          <h2>Welcome to Famous Dogs</h2>
         </header>
-        <p>
-          <Link to='/dogs'>See the List</Link>
-        </p>
+       
+        <Link to='/dogs'>
+          <img className="logo" 
+            alt="famous dogs logo" 
+            src="/dogs/famous-dogs.png"/>
+            
+          See the List
+        </Link>
       </div>
     );
   }

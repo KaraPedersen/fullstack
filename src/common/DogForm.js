@@ -5,7 +5,7 @@ export default class DogForm extends Component {
   state = {
     name: '',
     type: '',
-    tvShows: '',
+    tvShow: '',
     url: '',
     year: '',
     isSidekick: false
@@ -24,16 +24,17 @@ export default class DogForm extends Component {
   }
 
   handleChangeName = ({ target }) => {
-    this.setState({ type: target.value });
+    this.setState({ name: target.value });
   }
 
   handleChangeType = ({ target }) => {
     this.setState({ type: target.value });
   }
 
-  handleChangeTvShows = ({ target }) => {
-    this.setState({ tvShows: target.value });
-  }
+  handleChangeTvShow
+   = ({ target }) => {
+     this.setState({ tvShow: target.value });
+   }
 
   handleChangeUrl = ({ target }) => {
     this.setState({ url: target.value });
@@ -48,7 +49,7 @@ export default class DogForm extends Component {
   }  
   
   render() {
-    const { name, type, tvShows, url, year, isSidekick } = this.state;
+    const { name, type, tvShow, url, year, isSidekick } = this.state;
     const { dog } = this.props;
 
     return (
@@ -70,7 +71,7 @@ export default class DogForm extends Component {
             >
               <option value="" disabled>Type (
                 Beagle, Schnauzer, etc.)</option>
-              <option>Great Dane</option>
+              <option value = 'Great Dane'>Great Dane</option>
               <option>Bloodhound</option>
               <option>German Shepherd</option>
               <option>Beagle</option>
@@ -85,8 +86,9 @@ export default class DogForm extends Component {
         <p>
           <label>
             <span>Tv Shows</span>
-            <select name="Tv Shows" required
-              value={tvShows} onChange={this.handleChangeLives}
+            <select name="Tv-Shows" required
+              value={tvShow} 
+              onChange={this.handleChangeTvShow}
             >
               <option>Scooby Doo, Where Are you?</option>
               <option>Mickey Mouse Clubhouse</option>

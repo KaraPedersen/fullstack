@@ -23,7 +23,7 @@ export default class DogDetailPage extends Component {
       this.setState({ loading: false });
     }
   }
-  handelDelete = async () => {
+  handleDelete = async () => {
     const { dog } = this.state;
     const { history } = this.props;
 

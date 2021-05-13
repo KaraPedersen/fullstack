@@ -36,7 +36,7 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/dog/add" exact={true}
+              <Route path="/dogs/add" exact={true}
                 render={routerProps => (
                   <DogAddPage {...routerProps}/>
                 )}

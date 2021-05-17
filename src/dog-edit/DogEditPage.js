@@ -32,7 +32,7 @@ export default class DogEditPage extends Component {
         history.push(`/dogs/${updatedDog.id}`);
       }
       catch (err) {
-        console.log(err.message);
+        
         this.setState({ loading: false });
       }
     }
